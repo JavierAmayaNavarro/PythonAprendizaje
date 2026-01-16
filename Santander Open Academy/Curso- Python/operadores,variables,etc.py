@@ -235,3 +235,6 @@ funcion()  # Imprime 10
 funcion2()  # Imprime 20
 print(variable_global)  # Imprime 20
 print(variable_local)  # Genera un error, la variable no está definida en este alcance.
+
+#Funciones definidas por el usuario
+import funcion_definidas_usuario # Revisar el siguiente archivo , darle a F12 desde el VSCode
