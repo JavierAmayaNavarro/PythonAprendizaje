@@ -261,3 +261,104 @@ def suma_variable(*numeros): # EL * hace que puedas meter una cualquier cantidad
     return numero
 print(suma_variable(1,2,3)) # Imprime 6
 print(suma_variable(4,5,6,7)) # Imprime 22
+
+#### Manejo de Excepciones ####
+
+# Try -  El bloque try contiene el código que puede generar una excepción. Si ocurre una excepción dentro del bloque try, el flujo de ejecución se transfiere al bloque except correspondiente.
+
+try:
+    # Código que puede generar una excepción
+    resultado = 10 / 0  # División por cero
+    print(resultado)
+except ZeroDivisionError:
+    print("Error: División por cero")
+
+# Except - El bloque except especifica el tipo de excepción que se desea capturar y manejar. Puedes tener múltiples bloques except para manejar diferentes tipos de excepciones.
+
+try:
+    # Código que puede generar una excepción
+    resultado = 10 / 0  # División por cero
+    print(resultado)
+except ZeroDivisionError:
+    print("Error: División por cero")
+except ValueError:
+    print("Error: Valor inválido")
+
+# Finally - El bloque finally es opcional y se ejecuta siempre, independientemente de si ocurrió una excepción o no. Se utiliza comúnmente para realizar tareas de limpieza o liberación de recursos.
+try:
+    # Código que puede generar una excepción
+    archivo = open("archivo.txt", "r")
+    # Realizar operaciones con el archivo
+except FileNotFoundError:
+    print("Error: Archivo no encontrado")
+finally:
+    archivo.close()  # Cerrar el archivo siempre, incluso si ocurre una excepción
+
+# Excepcion Personalizada
+def funcion():
+    # Código que puede generar una excepción personalizada
+    if condicion:
+        raise Exception("Descripción del error")
+
+try:
+    funcion()
+except Exception as e:
+    print(f"Error: {str(e)}")
+
+#### Entradas // Salidas ####
+#Entradas de datos del usuario 
+nombre = input("Introduce tu nombre")
+edad = input("Introduce tu edad")
+
+print("Hola, " + nombre + "!")
+print ("Tienes " + edad + "años.")
+
+# ------------------------------------------------------------------------- #
+
+edad = int(input("Introduce tu edad: "))
+if edad >=18:
+    print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")
+
+
+# Salidas de datos
+nombre = "Juan"
+edad = 25
+print(f"Hola, mi nombre es {nombre} y tengo {edad} años.")
+
+#### Lectura y escritura de archivos ####
+
+#Lectura de archivos - Sirve para leer el contenido de un archivo 
+archivo = open("datos.txt", "r") # Suponiendo que tenemos este archivo previamente creado  La R significa Read(Modo Lectura)
+contenido = archivo.read()
+print(contenido)
+archivo.close()
+
+# Escritura de archivos - Escribir datos en un archivo, lo abrimos en modo escritura ("w")
+archivo = open("datos.txt" , "w")
+archivo.write("Hola Mundo")
+archivo.close()
+
+# Puedes escribir en los archivos con la apertura y cierre de archivos de manera automatica de los siguientes comandos 
+
+with open("datos.txt", "r") as archivo:
+    contenido = archivo.read()
+    print(contenido)
+
+
+#### Importacion y Creacion de Modulos ####
+
+#Importar modulo completo
+import math
+
+resultado = math.sqrt(25)
+print(resultado) #Imrpime 5.0
+
+#Importar una parte del modulo
+
+from math import sqrt
+
+resultado = sqrt(25)
+print (resultado)
+
