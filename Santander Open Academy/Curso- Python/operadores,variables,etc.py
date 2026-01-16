@@ -254,7 +254,7 @@ def area_rectangulo(base, altura):
     return base * altura
 
 # Funcion con numero variable de argumentos
-def suma_variable(*numeros):
+def suma_variable(*numeros): # EL * hace que puedas meter una cualquier cantidad de numeros como si fuera una tupla
     total = 0 
     for numero in numeros:
         total += 0
