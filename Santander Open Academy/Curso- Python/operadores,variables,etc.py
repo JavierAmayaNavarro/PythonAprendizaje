@@ -196,3 +196,42 @@ frutas.discard("uva")
 print(frutas)  # Imprime {"manzana", "naranja", "pera"}
 frutas.clear()
 print(frutas)  # Imprime set()
+
+#### Funciones ####
+
+# Definicion y llamada de funciones
+def saludo():
+    print("Hola Mundo")
+
+saludo() # Aqui imprime Hola Mundo
+
+#Parametros y argumentos
+def saludo(nombre):
+    print(f"Hola, {nombre}")
+
+saludo("Juan") # Imprime Hola, Juan
+
+# Valores de entorno
+def suma(a, b):
+    return a+b
+resultado = suma(3,4)
+print(resultado) #Imprime 7
+
+#Funciones anonimas (lambda)
+cuadrado = lambda x: x**2
+print(cuadrado(5)) # Imprime 25
+
+#Alcance de las variables (local vd global)
+def funcion():
+    variable_local = 10
+    print(variable_local)  # Accesible dentro de la función
+
+variable_global = 20
+
+def funcion2():
+    print(variable_global)  # Accesible desde cualquier lugar
+
+funcion()  # Imprime 10
+funcion2()  # Imprime 20
+print(variable_global)  # Imprime 20
+print(variable_local)  # Genera un error, la variable no está definida en este alcance.
