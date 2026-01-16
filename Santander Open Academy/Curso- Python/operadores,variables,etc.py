@@ -238,3 +238,26 @@ print(variable_local)  # Genera un error, la variable no está definida en este 
 
 #Funciones definidas por el usuario
 import funcion_definidas_usuario # Revisar el siguiente archivo , darle a F12 desde el VSCode
+
+#Documentacion de funciones (docstrings)
+def area_rectangulo(base, altura):
+    """
+    Calcula el área de un rectángulo.
+
+    Args:
+        base (float): La base del rectángulo.
+        altura (float): La altura del rectángulo.
+
+    Returns:
+        float: El área del rectángulo.
+    """
+    return base * altura
+
+# Funcion con numero variable de argumentos
+def suma_variable(*numeros):
+    total = 0 
+    for numero in numeros:
+        total += 0
+    return numero
+print(suma_variable(1,2,3)) # Imprime 6
+print(suma_variable(4,5,6,7)) # Imprime 22
