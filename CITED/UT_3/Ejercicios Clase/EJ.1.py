@@ -4,3 +4,4 @@ def saludar(nombre: str) -> None:
     print("Hola:", nombre)
 
 saludar(input(" Introduce tu nombre"))
+
